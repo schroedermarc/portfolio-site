@@ -9,8 +9,6 @@ export default function GalleryItem(props) {
     props.handleItemClick(props.data.slug.current);
   };
 
-  console.log(props.data.mainImage);
-
   return (
     <div className="gallery-item" onClick={itemClicked}>
       <div className="gallery-item-left-panel">

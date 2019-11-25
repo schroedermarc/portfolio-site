@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { client, serializers, urlFor } from '../utils/sanityIO';
 import '../styles/ProjectView.scss';
-import imageUrlBuilder from '@sanity/image-url';
 import { Carousel } from 'react-responsive-carousel';
 import styles from 'react-responsive-carousel/lib/styles/carousel.min.css';
-import goat from '../images/goat.jpeg';
 
 const BlockContent = require('@sanity/block-content-to-react');
 
@@ -16,8 +14,6 @@ export default function ProjectView(props) {
     const params = {};
 
     client.fetch(query, params).then(results => {
-      console.log(results);
-
       if (results.length === 1) {
         setProjectData(results[0]);
       } else {
@@ -37,7 +33,7 @@ export default function ProjectView(props) {
     const carouselImgJSX = projectData.carouselImages.map(el => {
       const url = urlFor(el).url();
       return (
-        <div>
+        <div key={el._key}>
           <img className="project-carousel-image" src={url} />
         </div>
       );
