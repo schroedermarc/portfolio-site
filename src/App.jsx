@@ -2,10 +2,15 @@ import React, { useEffect, useState } from 'react';
 import './App.scss';
 import Gallery from './containers/Gallery';
 import ProjectView from './containers/ProjectView';
+import NavBar from './containers/NavBar';
+import CVView from './containers/CVView';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App(props) {
   const [projectLoaded, setProjectLoaded] = useState(false);
+  const urlPath = props.location.pathname.split('/')[1];
+
+  console.log(props);
 
   const handleGalleryItemSelect = slug => {
     props.history.push(`/${slug}`);
@@ -14,13 +19,26 @@ function App(props) {
 
   // probably delete this later
   const navSelect = () => {
-    props.history.push('/');
+    // props.history.push('/');
   };
+
+  let pageNumber;
+  switch (urlPath) {
+    case '':
+      pageNumber = 0;
+      break;
+    case 'cv':
+      pageNumber = 1;
+      break;
+    default:
+      pageNumber = 0;
+      break;
+  }
 
   return (
     <div className="App">
       <div className="home-left-panel" onClick={navSelect}>
-        left panel
+        <NavBar selectedValue={pageNumber} />
       </div>
       <div className="home-right-panel">
         <Switch>
@@ -34,7 +52,12 @@ function App(props) {
               />
             )}
           />
-          <Route path={'/:slug'} render={props => <ProjectView {...props} />} />
+          <Route path={'/cv'} component={CVView} />
+          <Route
+            path={'/:slug'}
+            exact
+            render={props => <ProjectView {...props} />}
+          />
         </Switch>
       </div>
     </div>

@@ -6,7 +6,8 @@ export default function Gallery(props) {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    const query = '*[_type == "project"]';
+    const query =
+      '*[_type == "project"]{ "categories": categories[]->title, _id, slug, mainImage, title, thumbnailText, body}';
     const params = {};
 
     client.fetch(query, params).then(results => {
@@ -26,3 +27,5 @@ export default function Gallery(props) {
 
   return <div className="gallery-container">{galleryItemList}</div>;
 }
+
+//_id, slug, mainImage, title, thumbnailText, body
