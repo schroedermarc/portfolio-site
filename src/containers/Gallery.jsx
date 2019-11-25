@@ -10,7 +10,6 @@ export default function Gallery(props) {
     const params = {};
 
     client.fetch(query, params).then(results => {
-      console.log(results);
       setProjects(results);
     });
   }, []);

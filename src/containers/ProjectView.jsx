@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { client, serializers } from '../utils/sanityIO';
+import { client, serializers, urlFor } from '../utils/sanityIO';
 import '../styles/ProjectView.scss';
 import imageUrlBuilder from '@sanity/image-url';
 import { Carousel } from 'react-responsive-carousel';
@@ -32,21 +32,22 @@ export default function ProjectView(props) {
     pageContent = <div>loading...</div>;
   } else if (projectData.hasOwnProperty('title')) {
     // display project info
+
+    // gather images from data
+    const carouselImgJSX = projectData.carouselImages.map(el => {
+      const url = urlFor(el).url();
+      return (
+        <div>
+          <img className="project-carousel-image" src={url} />
+        </div>
+      );
+    });
+
     pageContent = (
       <div>
         <h1>{projectData.title}</h1>
         <BlockContent blocks={projectData.body} serializers={serializers} />
-        <Carousel>
-          <div>
-            <img src={goat} />
-          </div>
-          <div>
-            <img src={goat} />
-          </div>
-          <div>
-            <img src={goat} />
-          </div>
-        </Carousel>
+        <Carousel>{carouselImgJSX}</Carousel>
       </div>
     );
   } else {

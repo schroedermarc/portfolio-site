@@ -1,11 +1,12 @@
 import React from 'react';
+import imageUrlBuilder from '@sanity/image-url';
 
 const sanityClient = require('@sanity/client');
 export const client = sanityClient({
   projectId: '3ptjvz2p',
   dataset: 'production',
   token: '',
-  useCdn: true,
+  useCdn: false,
 });
 
 export const serializers = {
@@ -16,4 +17,10 @@ export const serializers = {
       </pre>
     ),
   },
+};
+
+const builder = imageUrlBuilder(client);
+
+export const urlFor = source => {
+  return builder.image(source);
 };

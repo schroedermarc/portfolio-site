@@ -1,19 +1,15 @@
 import React from 'react';
 import '../styles/GalleryItem.scss';
-import { client, serializers } from '../utils/sanityIO';
-import imageUrlBuilder from '@sanity/image-url';
+import { client, serializers, urlFor } from '../utils/sanityIO';
 
 const BlockContent = require('@sanity/block-content-to-react');
-const builder = imageUrlBuilder(client);
 
 export default function GalleryItem(props) {
   const itemClicked = () => {
     props.handleItemClick(props.data.slug.current);
   };
 
-  const urlFor = source => {
-    return builder.image(source);
-  };
+  console.log(props.data.mainImage);
 
   return (
     <div className="gallery-item" onClick={itemClicked}>
