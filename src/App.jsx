@@ -1,29 +1,35 @@
 import React, { useEffect, useState } from 'react';
 import './App.scss';
-import { client } from './utils/sanityIO';
-import GalleryItem from './components/GalleryItem';
+import Gallery from './containers/Gallery';
+import ProjectView from './containers/ProjectView';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-function App() {
-  const [projects, setProjects] = useState([]);
+function App(props) {
+  const [projectLoaded, setProjectLoaded] = useState(false);
 
-  useEffect(() => {
-    const query = '*[_type == "project"]';
-    const params = {};
-
-    client.fetch(query, params).then(results => {
-      console.log(results);
-      setProjects(results);
-    });
-  }, []);
-
-  const tempProjectsDiv = projects.map(el => {
-    return <GalleryItem key={el._id} data={el} />;
-  });
+  const handleGalleryItemSelect = slug => {
+    props.history.push(`/${slug}`);
+    setProjectLoaded(true);
+  };
 
   return (
     <div className="App">
       <div className="home-left-panel">left panel</div>
-      <div className="home-right-panel">{tempProjectsDiv}</div>
+      <div className="home-right-panel">
+        <Switch>
+          <Route
+            path={'/'}
+            exact
+            render={props => (
+              <Gallery
+                {...props}
+                handleGalleryItemSelect={handleGalleryItemSelect}
+              />
+            )}
+          />
+          <Route path={'/:slug'} render={props => <ProjectView {...props} />} />
+        </Switch>
+      </div>
     </div>
   );
 }
