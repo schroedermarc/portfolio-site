@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { client, serializers } from '../utils/sanityIO';
 import '../styles/ProjectView.scss';
+import imageUrlBuilder from '@sanity/image-url';
+import { Carousel } from 'react-responsive-carousel';
+import styles from 'react-responsive-carousel/lib/styles/carousel.min.css';
+import goat from '../images/goat.jpeg';
 
 const BlockContent = require('@sanity/block-content-to-react');
 
@@ -32,6 +36,17 @@ export default function ProjectView(props) {
       <div>
         <h1>{projectData.title}</h1>
         <BlockContent blocks={projectData.body} serializers={serializers} />
+        <Carousel>
+          <div>
+            <img src={goat} />
+          </div>
+          <div>
+            <img src={goat} />
+          </div>
+          <div>
+            <img src={goat} />
+          </div>
+        </Carousel>
       </div>
     );
   } else {

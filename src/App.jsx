@@ -12,9 +12,16 @@ function App(props) {
     setProjectLoaded(true);
   };
 
+  // probably delete this later
+  const navSelect = () => {
+    props.history.push('/');
+  };
+
   return (
     <div className="App">
-      <div className="home-left-panel">left panel</div>
+      <div className="home-left-panel" onClick={navSelect}>
+        left panel
+      </div>
       <div className="home-right-panel">
         <Switch>
           <Route
