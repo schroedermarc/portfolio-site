@@ -7,21 +7,6 @@ import * as d3 from 'd3-selection';
 export default function NavBar(props) {
   const items = ['#projects-nav-link', '#cv-nav-link'];
 
-  const handleClick = e => {
-    const clicked = e.target.getAttribute('id');
-
-    switch (clicked) {
-      case 'projects-nav-link':
-        // props.handleNavClick(0);
-        break;
-      case 'cv-nav-link':
-        // props.handleNavClick(1);
-        break;
-      default:
-        break;
-    }
-  };
-
   React.useEffect(() => {
     //clear selected class from all links
     items.forEach(item => {
@@ -34,19 +19,18 @@ export default function NavBar(props) {
     setNav(props.selectedValue);
   }, [props.selectedValue]);
 
+  const handleContactClicked = () => {
+    console.log('email me!');
+  };
+
   return (
     <div className="nav-bar-container">
       <div className="nav-bar-branded-area">Marc Schroeder</div>
-      {/* <div className="nav-bar-links-area">links</div> */}
       <div className="nav-links-container">
         <ul id="nav">
           <li className="nav-link-li">
             <Link to={`/`}>
-              <div
-                className="nav-link"
-                id="projects-nav-link"
-                // onClick={handleClick}
-              >
+              <div className="nav-link" id="projects-nav-link">
                 Projects
               </div>
             </Link>
@@ -60,6 +44,9 @@ export default function NavBar(props) {
           </li>
           <div className="nav-slider" id="nav-slide-click"></div>
         </ul>
+        <div className="contact-button" onClick={handleContactClicked}>
+          CONTACT
+        </div>
       </div>
     </div>
   );
