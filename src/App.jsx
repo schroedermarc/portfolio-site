@@ -37,9 +37,9 @@ function App(props) {
 
   return (
     <div className="App">
-      <div className="home-left-panel" onClick={navSelect}>
-        <NavBar selectedValue={pageNumber} />
-      </div>
+      {/* <div className="home-left-panel" onClick={navSelect}> */}
+      <NavBar selectedValue={pageNumber} />
+      {/* </div> */}
       <div className="home-right-panel">
         <Switch>
           <Route
