@@ -1,5 +1,6 @@
+@import './colors';
+
 .nav-bar-container {
-  border: 1px solid gray;
   height: 100px;
   width: 100%;
   display: flex;
@@ -7,6 +8,22 @@
   align-items: center;
 
   .nav-bar-branded-area {
+    cursor: pointer;
+
+    .name-text {
+      color: $nameTextColor;
+      text-decoration: none !important;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 45px;
+    }
+
+    .title-text {
+      text-transform: uppercase;
+      color: $titleTextColor;
+      font-weight: 200;
+      font-size: 16px;
+    }
   }
 
   .nav-links-container {
@@ -33,7 +50,7 @@
       .nav-slider {
         height: 0.2rem;
         margin-top: 3px;
-        background: blue;
+        background: $navUnderlineColor;
         border: none;
         transition: 0.3s ease-in-out;
         display: block;
@@ -44,7 +61,7 @@
       #nav hr {
         height: 0.2rem;
         margin-top: 3px;
-        background: blue;
+        background: $navUnderlineColor;
         border: none;
         transition: 0.3s ease-in-out;
         display: block;
@@ -55,23 +72,25 @@
       // border: 1px solid blue;
       display: inline-block;
       margin-right: 30px;
-      color: gray;
+      color: $linksTextColor;
       cursor: pointer;
       text-transform: uppercase;
-      font-size: 14px;
+      font-size: 12pt;
     }
 
     .contact-button {
       display: inline-block;
       padding: 5px;
-      background-color: lightcoral;
-      border: 2px solid lightcoral;
+      background-color: $contactButtonColor;
+      border: 2px solid $contactButtonColor;
       color: white;
+      font-family: IBM Plex Sans;
+      font-weight: 600;
       cursor: pointer;
 
       &:hover {
-        background-color: white;
-        color: lightcoral;
+        background-color: $siteBackgroundColor;
+        color: $contactButtonColor;
       }
     }
   }

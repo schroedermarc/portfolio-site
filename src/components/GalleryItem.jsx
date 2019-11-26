@@ -28,7 +28,26 @@ export default function GalleryItem(props) {
   if (props.data.categories) {
     catTags = props.data.categories.join(' / ');
   } else {
-    catTags = 'MISC';
+    catTags = 'Misc.';
+  }
+
+  let catContainerClass;
+  switch (catTags) {
+    case 'Web Development':
+      catContainerClass = 'white-on-accent-green';
+      break;
+    case 'Data Visualization':
+      catContainerClass = 'white-on-accent-blue';
+      break;
+    case 'Immersive Installation':
+      catContainerClass = 'white-on-accent-orange';
+      break;
+    case 'Misc.':
+      catContainerClass = 'white-on-accent-purple';
+      break;
+    default:
+      catContainerClass = 'white-on-accent-blue';
+      break;
   }
 
   return (
@@ -38,12 +57,14 @@ export default function GalleryItem(props) {
       onClick={itemClicked}
     >
       <div className="gallery-item-center-text-container">
-        <div className="gallery-item-project-category-container">{catTags}</div>
+        <div
+          className={`gallery-item-project-category-container ${catContainerClass}`}
+        >
+          {catTags}
+        </div>
 
         <div className="gallery-item-title-and-subtitle-container">
-          <div className="gallery-item-title-container">
-            <h2>{props.data.title}</h2>
-          </div>
+          <div className="gallery-item-title-container">{props.data.title}</div>
           <div className="gallery-item-subtitle-container">
             <BlockContent
               blocks={props.data.thumbnailText}

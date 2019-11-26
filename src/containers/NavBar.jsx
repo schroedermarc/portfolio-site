@@ -23,9 +23,18 @@ export default function NavBar(props) {
     console.log('email me!');
   };
 
+  // const handleNameClicked = () => {
+
+  // }
+
   return (
     <div className="nav-bar-container">
-      <div className="nav-bar-branded-area">Marc Schroeder</div>
+      <Link to="/" style={{ textDecoration: 'none' }}>
+        <div className="nav-bar-branded-area">
+          <span className="name-text">Marc Schroeder</span>
+          <span className="title-text"> // Design Technologist</span>
+        </div>
+      </Link>
       <div className="nav-links-container">
         <ul id="nav">
           <li className="nav-link-li">

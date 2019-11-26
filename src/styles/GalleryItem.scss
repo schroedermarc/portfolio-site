@@ -7,6 +7,7 @@
   align-items: center;
   overflow: hidden;
   background-position: center;
+  cursor: pointer;
 
   .gallery-item-center-text-container {
     background-color: white;
@@ -17,14 +18,22 @@
     flex-flow: column;
 
     .gallery-item-project-category-container {
-      background-color: gray;
       text-align: center;
       padding: 3px 0px;
+      font-family: IBM Plex Mono;
+      text-transform: uppercase;
+      font-weight: 500;
+      font-size: 10pt;
     }
 
     .gallery-item-title-and-subtitle-container {
       .gallery-item-title-container {
         text-align: center;
+        font-family: IBM Plex Sans;
+        font-size: 22pt;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin: 10px 0px;
       }
 
       .gallery-item-subtitle-container {

@@ -1,2 +1,38 @@
-$siteBackgroundColor: white;
+$accentBlue: rgb(103, 204, 194);
+$accentGreen: rgb(102, 156, 40);
+$accentOrange: rgb(250, 139, 3);
+$accentPurple: rgb(68, 39, 92);
+
+$siteBackgroundColor: rgb(27,
+  27,
+  27);
+$nameTextColor: white;
+$titleTextColor: white;
 $galleryTextboxBackgroundColor: white;
+$linksTextColor: white;
+$navUnderlineColor: $accentBlue;
+$contactButtonColor: $accentBlue;
+
+
+
+
+
+.white-on-accent-blue {
+  background-color: $accentBlue;
+  color: white;
+}
+
+.white-on-accent-green {
+  background-color: $accentGreen;
+  color: white;
+}
+
+.white-on-accent-orange {
+  background-color: $accentOrange;
+  color: white;
+}
+
+.white-on-accent-purple {
+  background-color: $accentPurple;
+  color: white;
+}

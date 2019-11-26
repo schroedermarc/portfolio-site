@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import '../styles/CVView.scss';
 import { Document, Page, pdfjs } from 'react-pdf';
 import { client } from '../utils/sanityIO';
 
@@ -24,13 +25,13 @@ export default function CVView() {
   if (pdfUrl) {
     console.log(pdfUrl);
     pageContent = (
-      <Document file={pdfUrl}>
+      <Document className="cv-pdf-image" file={pdfUrl}>
         <Page pageNumber={1} />
       </Document>
     );
   } else {
-    pageContent = <div>Loading...</div>;
+    pageContent = <span>Loading...</span>;
   }
 
-  return pageContent;
+  return <div className="cv-pdf-container">{pageContent}</div>;
 }
