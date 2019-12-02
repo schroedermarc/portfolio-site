@@ -4,13 +4,12 @@ import Gallery from './containers/Gallery';
 import ProjectView from './containers/ProjectView';
 import NavBar from './containers/NavBar';
 import CVView from './containers/CVView';
+import CV2 from './containers/CV2';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App(props) {
   const [projectLoaded, setProjectLoaded] = useState(false);
   const urlPath = props.location.pathname.split('/')[1];
-
-  console.log(props);
 
   const handleGalleryItemSelect = slug => {
     props.history.push(`/${slug}`);
@@ -52,7 +51,7 @@ function App(props) {
               />
             )}
           />
-          <Route path={'/cv'} component={CVView} />
+          <Route path={'/cv'} component={CV2} />
           <Route
             path={'/:slug'}
             exact

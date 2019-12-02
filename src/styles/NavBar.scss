@@ -1,4 +1,5 @@
 @import './colors';
+@import './constants.scss';
 
 .nav-bar-container {
   height: 100px;
@@ -81,16 +82,16 @@
     .contact-button {
       display: inline-block;
       padding: 5px;
-      background-color: $contactButtonColor;
+      background-color: $siteBackgroundColor;
       border: 2px solid $contactButtonColor;
-      color: white;
+      color: $contactButtonColor;
       font-family: IBM Plex Sans;
       font-weight: 600;
       cursor: pointer;
 
       &:hover {
-        background-color: $siteBackgroundColor;
-        color: $contactButtonColor;
+        background-color: $contactButtonColor;
+        color: white;
       }
     }
   }
@@ -105,4 +106,33 @@
 
 .nav-is-selected {
   font-weight: bold;
+}
+
+
+@media only screen and (max-width: $mobileBreakpoint) {
+  .nav-bar-container {
+    flex-flow: column;
+    height: unset;
+    padding-left: 10px;
+    justify-content: unset;
+    align-items: unset;
+
+    .nav-bar-branded-area {
+      // border: 1px solid red;
+      display: flex;
+      flex-flow: column;
+      margin: 10px 0px;
+
+
+      .name-text {
+        font-size: 32px;
+      }
+    }
+
+    .nav-links-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
 }

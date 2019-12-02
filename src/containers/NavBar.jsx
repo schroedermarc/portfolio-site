@@ -20,7 +20,8 @@ export default function NavBar(props) {
   }, [props.selectedValue]);
 
   const handleContactClicked = () => {
-    console.log('email me!');
+    // console.log('email me!');
+    window.location.href = 'mailto:marcschroeder44@gmail.com';
   };
 
   // const handleNameClicked = () => {

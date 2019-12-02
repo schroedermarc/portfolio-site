@@ -1,3 +1,5 @@
+@import './constants.scss';
+
 .gallery-item {
   margin: 10px 0px;
   border: 1px solid gray;
@@ -41,4 +43,23 @@
       }
     }
   }
+}
+
+@media only screen and (max-width: $mobileBreakpoint) {
+
+  .gallery-item {
+
+    height: 600px !important;
+    margin-left: 10px;
+
+    .gallery-item-center-text-container {
+      width: 70% !important;
+      height: unset !important;
+    }
+
+    .gallery-item-title-and-subtitle-container {
+      padding: 10px !important;
+    }
+  }
+
 }

@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import '../styles/GalleryItem.scss';
 import { client, serializers, urlFor } from '../utils/sanityIO';
+import { getCategoryContainerClass } from '../utils/colorUtils';
 import * as d3 from 'd3-selection';
 
 const BlockContent = require('@sanity/block-content-to-react');
@@ -14,8 +15,8 @@ export default function GalleryItem(props) {
 
   const url = urlFor(props.data.mainImage)
     .width(1200)
-    .height(400)
-    .blur(80)
+    .height(600)
+    .blur(60)
     .url();
 
   useEffect(() => {
@@ -31,24 +32,7 @@ export default function GalleryItem(props) {
     catTags = 'Misc.';
   }
 
-  let catContainerClass;
-  switch (catTags) {
-    case 'Web Development':
-      catContainerClass = 'white-on-accent-green';
-      break;
-    case 'Data Visualization':
-      catContainerClass = 'white-on-accent-blue';
-      break;
-    case 'Immersive Installation':
-      catContainerClass = 'white-on-accent-orange';
-      break;
-    case 'Misc.':
-      catContainerClass = 'white-on-accent-purple';
-      break;
-    default:
-      catContainerClass = 'white-on-accent-blue';
-      break;
-  }
+  const catContainerClass = getCategoryContainerClass(catTags);
 
   return (
     <div

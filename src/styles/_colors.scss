@@ -8,6 +8,7 @@ $siteBackgroundColor: rgb(27,
   27);
 $nameTextColor: white;
 $titleTextColor: white;
+$projectViewTextColor: white;
 $galleryTextboxBackgroundColor: white;
 $linksTextColor: white;
 $navUnderlineColor: $accentBlue;
@@ -15,6 +16,21 @@ $contactButtonColor: $accentBlue;
 
 
 
+.accent-green-text {
+  color: $accentGreen;
+}
+
+.accent-blue-text {
+  color: $accentBlue;
+}
+
+.accent-orange-text {
+  color: $accentOrange;
+}
+
+.accent-purple-text {
+  color: $accentPurple;
+}
 
 
 .white-on-accent-blue {

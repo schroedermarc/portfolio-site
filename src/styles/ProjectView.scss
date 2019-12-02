@@ -1,3 +1,37 @@
+@import './colors';
+
+.page-content-container {
+  color: $projectViewTextColor;
+  margin-top: 25px;
+
+  .page-content-title {
+    font-family: IBM Plex Sans;
+    text-transform: uppercase;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+
+  .project-info-table {
+    font-family: IBM Plex Mono;
+    font-size: 12pt;
+    margin-top: 5px;
+
+    .project-info-category {
+      font-weight: bold;
+    }
+  }
+
+  .page-content-body {
+    max-width: 1000px;
+    margin: 30px 0px;
+  }
+}
+
 .carousel-status {
   display: none;
+}
+
+.a:visited {
+  color: white !important;
 }
