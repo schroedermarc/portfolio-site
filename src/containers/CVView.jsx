@@ -11,7 +11,7 @@ export default function CVView() {
   const [pdfUrl, setPdfUrl] = useState(null);
 
   useEffect(() => {
-    const query = '*[_type == "cv"]';¡
+    const query = '*[_type == "cv"]';
     const params = {};
     client.fetch(query, params).then(results => {
       const rawFileName = results[0].cvPdf.asset._ref;
