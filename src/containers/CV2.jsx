@@ -41,7 +41,7 @@ export default function CV2() {
             Francisco, CA
           </span>
           <span className="cv-experience-timeframe">
-            January 2018 to June 2019
+            January 2019 to June 2019
           </span>
           <span className="cv-experience-description">
             Designed and developed immersive, room-scale installations blending
@@ -98,17 +98,18 @@ export default function CV2() {
         <h2 className="cv-header">digital art exhibitions</h2>
         <ul className="cv-list">
           <li className="cv-list-item">
-            MUTEK.SF - Elevator Pitch (A/V Installation) — May 2019
+            <b>MUTEK.SF</b> - Elevator Pitch (A/V Installation) — May 2019
           </li>
           <li className="cv-list-item">
-            Gray Area Showcase 2019.1 - Core (A/V Installation) — June 2019
+            <b>Gray Area Showcase 2019.1</b> - Core (A/V Installation) — June
+            2019
           </li>
           <li className="cv-list-item">
-            Rush V.1 - Entrance (A/V Installation) — June 2019
+            <b>Rush V.1</b> - Entrance (A/V Installation) — June 2019
           </li>
           <li className="cv-list-item">
-            Gray Area Showcase 2018.2 - Elevator Pitch (A/V Installation) —
-            December 2018
+            <b>Gray Area Showcase 2018.2</b> - Elevator Pitch (A/V Installation)
+            — December 2018
           </li>
         </ul>
 

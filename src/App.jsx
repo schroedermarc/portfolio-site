@@ -59,6 +59,10 @@ function App(props) {
           />
         </Switch>
       </div>
+      <div className="app-footer">
+        {' '}
+        ©Copyright Marc Schroeder 2019 - Site made with Sanity.io and React.js{' '}
+      </div>
     </div>
   );
 }

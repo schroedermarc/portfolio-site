@@ -15,7 +15,7 @@
     background-color: white;
     border: 1px solid black;
     width: 50%;
-    height: 160px;
+    height: auto;
     display: flex;
     flex-flow: column;
 
@@ -40,6 +40,7 @@
 
       .gallery-item-subtitle-container {
         text-align: center;
+        margin: 0px 10px;
       }
     }
   }
