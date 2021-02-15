@@ -1,37 +1,32 @@
-import React, { useEffect, useState } from 'react';
-import './App.scss';
-import Gallery from './containers/Gallery';
-import ProjectView from './containers/ProjectView';
-import NavBar from './containers/NavBar';
-import CVView from './containers/CVView';
-import CV2 from './containers/CV2';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import React, { useEffect, useState } from 'react'
+import './App.scss'
+import Gallery from './containers/Gallery'
+import ProjectView from './containers/ProjectView'
+import NavBar from './containers/NavBar'
+import CVView from './containers/CVView'
+import CV2 from './containers/CV2'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 function App(props) {
-  const [projectLoaded, setProjectLoaded] = useState(false);
-  const urlPath = props.location.pathname.split('/')[1];
+  const [projectLoaded, setProjectLoaded] = useState(false)
+  const urlPath = props.location.pathname.split('/')[1]
 
-  const handleGalleryItemSelect = slug => {
-    props.history.push(`/${slug}`);
-    setProjectLoaded(true);
-  };
+  const handleGalleryItemSelect = (slug) => {
+    props.history.push(`/${slug}`)
+    setProjectLoaded(true)
+  }
 
-  // probably delete this later
-  const navSelect = () => {
-    // props.history.push('/');
-  };
-
-  let pageNumber;
+  let pageNumber
   switch (urlPath) {
     case '':
-      pageNumber = 0;
-      break;
+      pageNumber = 0
+      break
     case 'cv':
-      pageNumber = 1;
-      break;
+      pageNumber = 1
+      break
     default:
-      pageNumber = 0;
-      break;
+      pageNumber = 0
+      break
   }
 
   return (
@@ -44,7 +39,7 @@ function App(props) {
           <Route
             path={'/'}
             exact
-            render={props => (
+            render={(props) => (
               <Gallery
                 {...props}
                 handleGalleryItemSelect={handleGalleryItemSelect}
@@ -55,16 +50,16 @@ function App(props) {
           <Route
             path={'/:slug'}
             exact
-            render={props => <ProjectView {...props} />}
+            render={(props) => <ProjectView {...props} />}
           />
         </Switch>
       </div>
       <div className="app-footer">
         {' '}
-        ©Copyright Marc Schroeder 2019 - Site made with Sanity.io and React.js{' '}
+        ©Copyright Marc Schroeder 2021 - Site made with Sanity.io and React.js{' '}
       </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

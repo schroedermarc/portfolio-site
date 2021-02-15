@@ -2,7 +2,7 @@
   "name": "ms-portfolio-site",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://labelm8.marc-schroeder.co/new-portfolio",
+  "homepage": ".",
   "dependencies": {
     "@react-pdf/renderer": "^1.6.8",
     "@sanity/block-content-to-react": "^2.0.7",
