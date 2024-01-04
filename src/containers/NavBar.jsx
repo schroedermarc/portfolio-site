@@ -9,7 +9,7 @@ export default function NavBar(props) {
 
   React.useEffect(() => {
     //clear selected class from all links
-    items.forEach(item => {
+    items.forEach((item) => {
       d3.select(item).classed('nav-is-selected', false);
     });
 
@@ -17,7 +17,7 @@ export default function NavBar(props) {
     d3.select(items[props.selectedValue]).classed('nav-is-selected', true);
 
     setNav(props.selectedValue);
-  }, [props.selectedValue]);
+  }, [items, props.selectedValue]);
 
   const handleContactClicked = () => {
     // console.log('email me!');
@@ -33,7 +33,7 @@ export default function NavBar(props) {
       <Link to="/" style={{ textDecoration: 'none' }}>
         <div className="nav-bar-branded-area">
           <span className="name-text">Marc Schroeder</span>
-          <span className="title-text"> // Design Technologist</span>
+          <span className="title-text"> // Data Visualization Engineer</span>
         </div>
       </Link>
       <div className="nav-links-container">
@@ -45,13 +45,13 @@ export default function NavBar(props) {
               </div>
             </Link>
           </li>
-          <li className="nav-link-li">
+          {/* <li className="nav-link-li">
             <Link to={`/cv`}>
               <div className="nav-link" id="cv-nav-link">
                 CV
               </div>
             </Link>
-          </li>
+          </li> */}
           <div className="nav-slider" id="nav-slide-click"></div>
         </ul>
         <div className="contact-button" onClick={handleContactClicked}>

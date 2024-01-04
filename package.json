@@ -2,20 +2,20 @@
   "name": "ms-portfolio-site",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://labelm8.marc-schroeder.co/new-portfolio",
+  "homepage": ".",
   "dependencies": {
     "@react-pdf/renderer": "^1.6.8",
     "@sanity/block-content-to-react": "^2.0.7",
     "@sanity/client": "^0.145.0",
     "@sanity/image-url": "^0.140.15",
     "d3-selection": "^1.4.1",
-    "node-sass": "^4.13.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-pdf": "^4.1.0",
     "react-responsive-carousel": "^3.1.51",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.2.0"
+    "react-scripts": "3.2.0",
+    "sass": "^1.69.7"
   },
   "scripts": {
     "start": "react-scripts start",

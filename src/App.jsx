@@ -11,7 +11,7 @@ function App(props) {
   const [projectLoaded, setProjectLoaded] = useState(false);
   const urlPath = props.location.pathname.split('/')[1];
 
-  const handleGalleryItemSelect = slug => {
+  const handleGalleryItemSelect = (slug) => {
     props.history.push(`/${slug}`);
     setProjectLoaded(true);
   };
@@ -44,7 +44,7 @@ function App(props) {
           <Route
             path={'/'}
             exact
-            render={props => (
+            render={(props) => (
               <Gallery
                 {...props}
                 handleGalleryItemSelect={handleGalleryItemSelect}
@@ -55,13 +55,9 @@ function App(props) {
           <Route
             path={'/:slug'}
             exact
-            render={props => <ProjectView {...props} />}
+            render={(props) => <ProjectView {...props} />}
           />
         </Switch>
-      </div>
-      <div className="app-footer">
-        {' '}
-        ©Copyright Marc Schroeder 2019 - Site made with Sanity.io and React.js{' '}
       </div>
     </div>
   );

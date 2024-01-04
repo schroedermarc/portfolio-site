@@ -7,19 +7,20 @@ export default function Gallery(props) {
 
   useEffect(() => {
     const query =
-      '*[_type == "project"]{ "categories": categories[]->title, _id, slug, mainImage, title, thumbnailText, body}';
+      '*[_type == "project"]{ "categories": categories[]->title, _id, slug, mainImage, title, thumbnailText, body, year} | order(year desc)';
     const params = {};
 
-    client.fetch(query, params).then(results => {
+    client.fetch(query, params).then((results) => {
+      console.log(results);
       setProjects(results);
     });
   }, []);
 
-  const handleItemClick = slug => {
+  const handleItemClick = (slug) => {
     props.handleGalleryItemSelect(slug);
   };
 
-  const galleryItemList = projects.map(el => {
+  const galleryItemList = projects.map((el) => {
     return (
       <GalleryItem key={el._id} data={el} handleItemClick={handleItemClick} />
     );
@@ -27,5 +28,3 @@ export default function Gallery(props) {
 
   return <div className="gallery-container">{galleryItemList}</div>;
 }
-
-//_id, slug, mainImage, title, thumbnailText, body

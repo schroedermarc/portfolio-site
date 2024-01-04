@@ -12,7 +12,7 @@
   cursor: pointer;
 
   .gallery-item-center-text-container {
-    background-color: white;
+    background-color: rgb(233, 233, 233);
     border: 1px solid black;
     width: 50%;
     height: auto;
@@ -34,7 +34,7 @@
         font-family: IBM Plex Sans;
         font-size: 22pt;
         font-weight: 600;
-        text-transform: uppercase;
+        // text-transform: uppercase;
         margin: 10px 0px;
       }
 
@@ -47,9 +47,7 @@
 }
 
 @media only screen and (max-width: $mobileBreakpoint) {
-
   .gallery-item {
-
     height: 600px !important;
     margin-left: 10px;
 
@@ -62,5 +60,4 @@
       padding: 10px !important;
     }
   }
-
 }
