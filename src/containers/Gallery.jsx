@@ -7,11 +7,10 @@ export default function Gallery(props) {
 
   useEffect(() => {
     const query =
-      '*[_type == "project"]{ "categories": categories[]->title, _id, slug, mainImage, title, thumbnailText, body, year} | order(year desc)';
+      '*[_type == "project" && slug.current != "oof"]{ "categories": categories[]->title, _id, slug, mainImage, title, thumbnailText, body, year} | order(year desc)';
     const params = {};
 
     client.fetch(query, params).then((results) => {
-      console.log(results);
       setProjects(results);
     });
   }, []);
