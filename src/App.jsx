@@ -3,17 +3,27 @@ import './App.scss'
 import Gallery from './containers/Gallery'
 import ProjectView from './containers/ProjectView'
 import NavBar from './containers/NavBar'
-import CVView from './containers/CVView'
 import CV2 from './containers/CV2'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 function App(props) {
   const [projectLoaded, setProjectLoaded] = useState(false)
+  const [allProjectsView, setAllProjectsView] = useState(false)
   const urlPath = props.location.pathname.split('/')[1]
 
   const handleGalleryItemSelect = (slug) => {
     props.history.push(`/${slug}`)
     setProjectLoaded(true)
+  }
+
+  const handlePasswordInput = (pw) => {
+    const PW = 'dubplate'
+
+    if (pw === PW) {
+      setAllProjectsView(true)
+    } else {
+      // console.log('nomatch')
+    }
   }
 
   let pageNumber
@@ -42,6 +52,8 @@ function App(props) {
             render={(props) => (
               <Gallery
                 {...props}
+                allProjectsView={allProjectsView}
+                handlePasswordInput={handlePasswordInput}
                 handleGalleryItemSelect={handleGalleryItemSelect}
               />
             )}

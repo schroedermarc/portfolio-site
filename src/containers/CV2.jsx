@@ -1,5 +1,5 @@
-import React from 'react';
-import '../styles/CV2.scss';
+import React from 'react'
+import '../styles/CV2.scss'
 
 export default function CV2() {
   return (
@@ -11,79 +11,96 @@ export default function CV2() {
         <h2 className="cv-header">experience</h2>
         <div className="cv-content-block">
           {/*  */}
-          <span className="cv-experience-location-position">
-            Design Technologist (contract), Stamen Design, San Francisco, CA
-          </span>
-          <span className="cv-experience-timeframe">
-            May 2019 to Present Day
-          </span>
-          <span className="cv-experience-description">
-            Part Design Thinking. Part Data Science. Two Parts Web Development.
-            Design technologist developing interactive maps and data
-            visualizations on the web. Clients include UC Berkeley, The
-            Berggruen Institute, Dropbox Inc., San Francisco State University,
-            and the Bay Area Air Quality Management District.
-          </span>
+
+          <div className="experience-block">
+            <span className="experience-block__timeframe">
+              May 2019 to Present Day
+            </span>
+            <span className="experience-block__location-position">
+              Design Technologist (contract), Stamen Design, San Francisco, CA
+            </span>
+            <span className="experience-block__description">
+              Part Design Thinking. Part Data Science. Two Parts Web
+              Development. Design technologist developing interactive maps and
+              made-to-order data visualizations on the web. Clients include The
+              Bill and Melinda Gates Foundation, Johnson & Johnson, UC Berkeley,
+              The Berggruen Institute, Dropbox Inc.
+            </span>
+          </div>
           {/*  */}
-          <span className="cv-experience-location-position">
-            Creative Code Instructor, Gray Area Foundation for the Arts, San
-            Francisco, CA
-          </span>
-          <span className="cv-experience-timeframe">Ongoing</span>
-          <span className="cv-experience-description">
-            Teacher for the Web Audio week of the Gray Area Creative Code
-            Immersive. Class covers basics of electronic music synthesis, music
-            programming in Tone.js, and audio-visual interaction with p5.js.
-          </span>
+          <div className="experience-block">
+            <span className="experience-block__timeframe">Ongoing</span>
+            <span className="experience-block__location-position">
+              Creative Code Instructor, Gray Area Foundation for the Arts, San
+              Francisco, CA
+            </span>
+            <span className="experience-block__description">
+              Teacher for the Web Audio and 3D envioronments weeks of the Gray
+              Area Creative Code Immersive. Web Audio covers basics of
+              electronic music synthesis, music programming in Tone.js, and
+              audio-visual interaction with p5.js. 3D Environments covers
+              creating VR-ready 3D worlds with A-FRAME.
+            </span>
+          </div>
           {/*  */}
-          <span className="cv-experience-location-position">
-            Artist In Residence, Gray Area Foundation for the Arts, San
-            Francisco, CA
-          </span>
-          <span className="cv-experience-timeframe">
-            January 2019 to June 2019
-          </span>
-          <span className="cv-experience-description">
-            Designed and developed immersive, room-scale installations blending
-            physical computing, projection mapping, and sound design. Clients
-            include Levy Dance and Google.
-          </span>
+          <div className="experience-block">
+            <span className="experience-block__timeframe">
+              January 2019 to June 2019
+            </span>
+            <span className="experience-block__location-position">
+              Artist In Residence, Gray Area Foundation for the Arts, San
+              Francisco, CA
+            </span>
+            <span className="experience-block__description">
+              Designed and developed immersive, room-scale installations
+              blending physical computing, projection mapping, and sound design.
+              Clients include Levy Dance and Google.
+            </span>
+          </div>
           {/*  */}
-          <span className="cv-experience-location-position">
-            Technologist, Company Cue, New York, NY (Remote)
-          </span>
-          <span className="cv-experience-timeframe">
-            June 2018 to April 2019
-          </span>
-          <span className="cv-experience-description">
-            Developed web tools, processes and database management software for
-            worldwide language translation and original marketing copy.
-          </span>
+          <div className="experience-block">
+            <span className="experience-block__timeframe">
+              June 2018 to April 2019
+            </span>
+            <span className="experience-block__location-position">
+              Technologist, Company Cue, New York, NY (Remote)
+            </span>
+            <span className="experience-block__description">
+              Developed web tools, processes and database management software
+              for worldwide language translation and original marketing copy.
+            </span>
+          </div>
           {/*  */}
-          <span className="cv-experience-location-position">
-            Curated Content and Data Producer, Music, Apple, Cupertino, CA
-          </span>
-          <span className="cv-experience-timeframe">May 2014 to May 2018</span>
-          <span className="cv-experience-description">
-            Project manager throughout launch of Apple Music, and Apple Music
-            expansion launches in Israel, South Korea, Turkey, Taiwan, and
-            others. From pre-launch to over 30 million paid subscribers around
-            the world.
-          </span>
+          <div className="experience-block">
+            <span className="experience-block__timeframe">
+              May 2014 to May 2018
+            </span>
+            <span className="experience-block__location-position">
+              Curated Content and Data Producer, Music, Apple, Cupertino, CA
+            </span>
+            <span className="experience-block__description">
+              Project manager throughout launch of Apple Music, and Apple Music
+              expansion launches in Israel, South Korea, Turkey, Taiwan, and
+              others. From pre-launch to over 30 million paid subscribers around
+              the world.
+            </span>
+          </div>
           {/*  */}
-          <span className="cv-experience-location-position">
-            iTunes Programming & Label Relations Intern, Music, Apple,
-            Cupertino, CA
-          </span>
-          <span className="cv-experience-timeframe">2013 to 2014</span>
+          <div className="experience-block">
+            <span className="experience-block__timeframe">2013 to 2014</span>
+            <span className="experience-block__location-position">
+              iTunes Programming & Label Relations Intern, Music, Apple,
+              Cupertino, CA
+            </span>
+          </div>
         </div>
 
         {/* Technical Skills */}
         <h2 className="cv-header">technical skills</h2>
         <ul className="cv-list">
           <li className="cv-list-item">
-            <b>Web Development Stack:</b> React.js, d3.js, Mapbox GL JS,
-            Node.js, Parcel
+            <b>Web Development Stack:</b> Modern Javascript tools - React and
+            Vue, Webpack, Node, Mapbox GLJS, D3.js, Firebase, Heroku + more.
           </li>
           <li className="cv-list-item">
             <b>Data Analysis:</b> Pandas for Python, Seaborn
@@ -131,5 +148,5 @@ export default function CV2() {
         </div>
       </div>
     </div>
-  );
+  )
 }

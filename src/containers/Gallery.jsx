@@ -5,7 +5,7 @@ import HiddenProjectNotification from '../components/HiddenProjectNotification/H
 
 export default function Gallery(props) {
   const [projects, setProjects] = useState([])
-  const [allProjectsView, setAllProjectsView] = useState(false)
+  // const [allProjectsView, setAllProjectsView] = useState(false)
 
   const loadData = ({ allProjects }) => {
     const query = allProjects
@@ -19,22 +19,11 @@ export default function Gallery(props) {
   }
 
   useEffect(() => {
-    loadData({ allProjects: allProjectsView })
-  }, [allProjectsView])
+    loadData({ allProjects: props.allProjectsView })
+  }, [props.allProjectsView])
 
   const handleItemClick = (slug) => {
     props.handleGalleryItemSelect(slug)
-  }
-
-  const handlePasswordInput = (pw) => {
-    const PW = 'dubplate'
-
-    if (pw === PW) {
-      console.log('passwords matched')
-      setAllProjectsView(true)
-    } else {
-      console.log('nomatch')
-    }
   }
 
   const galleryItemList = projects.map((el) => {
@@ -43,9 +32,16 @@ export default function Gallery(props) {
     )
   })
 
+  const hiddenNotification = (
+    <HiddenProjectNotification
+      allProjectsView={props.allProjectsView}
+      handlePasswordInput={props.handlePasswordInput}
+    />
+  )
+
   return (
     <div className="gallery-container">
-      <HiddenProjectNotification handlePasswordInput={handlePasswordInput} />
+      {hiddenNotification}
       {galleryItemList}
     </div>
   )
