@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Commands
 
-Create React App (react-scripts 3.2) project; both `yarn.lock` and `package-lock.json` exist, and the README uses yarn.
+Create React App (react-scripts 3.2) project; the README uses yarn.
 
 - `yarn start` — dev server at http://localhost:3000
 - `yarn build` — production build into `build/`
@@ -14,8 +14,9 @@ Create React App (react-scripts 3.2) project; both `yarn.lock` and `package-lock
 Linting is CRA's built-in `react-app` ESLint config, shown in the dev server/build output; there is no separate lint script.
 
 Things to know about the toolchain:
-- `node-sass@4` only builds on old Node versions (roughly Node ≤ 14). If install fails on a modern Node, that dependency is the cause.
-- `build/` is committed to git, so rebuilding changes tracked files.
+- Styles compile with `sass` (Dart Sass), pinned to `~1.69.7` because newer releases require Node ≥ 20. Node 18 works.
+- On Node 17+, react-scripts 3.2's webpack 4 needs `NODE_OPTIONS=--openssl-legacy-provider` for `yarn start` and `yarn build`.
+- `build/` and `.idea/` are gitignored. Both `yarn.lock` and `package-lock.json` exist; `yarn.lock` is the maintained one.
 - The only test (`src/App.test.js`) renders `<App />` without a Router, and `App` reads `props.location`, so it fails as written.
 
 ## Architecture
