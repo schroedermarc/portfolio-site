@@ -9,8 +9,8 @@ export default function Gallery(props) {
 
   const loadData = ({ allProjects }) => {
     const query = allProjects
-      ? '*[_type == "project"]{ "categories": categories[]->title, _id, slug, mainImage, title, thumbnailText, body}'
-      : '*[_type == "project" && protected == false]{ "categories": categories[]->title, _id, slug, mainImage, title, thumbnailText, body}'
+      ? '*[_type == "project" && slug.current != "oof"]{ "categories": categories[]->title, _id, slug, mainImage, title, thumbnailText, body, year} | order(year desc)'
+      : '*[_type == "project" && protected == false && slug.current != "oof"]{ "categories": categories[]->title, _id, slug, mainImage, title, thumbnailText, body, year} | order(year desc)'
     const params = {}
 
     client.fetch(query, params).then((results) => {
@@ -46,5 +46,3 @@ export default function Gallery(props) {
     </div>
   )
 }
-
-//_id, slug, mainImage, title, thumbnailText, body

@@ -22,7 +22,7 @@
     .title-text {
       text-transform: uppercase;
       color: $titleTextColor;
-      font-weight: 200;
+      font-weight: 600;
       font-size: 16px;
     }
   }
@@ -108,7 +108,6 @@
   font-weight: bold;
 }
 
-
 @media only screen and (max-width: $mobileBreakpoint) {
   .nav-bar-container {
     flex-flow: column;
@@ -122,7 +121,6 @@
       display: flex;
       flex-flow: column;
       margin: 10px 0px;
-
 
       .name-text {
         font-size: 32px;
