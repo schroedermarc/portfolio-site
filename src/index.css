@@ -1,0 +1,15 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-site: rgb(19 18 18);
+  --color-accent-blue: rgb(103 204 194);
+  --color-accent-green: rgb(102 156 40);
+  --color-accent-orange: rgb(250 139 3);
+  --color-accent-purple: rgb(68 39 92);
+}
+
+@layer base {
+  body {
+    @apply bg-site text-white antialiased;
+  }
+}
